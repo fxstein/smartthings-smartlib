@@ -18,16 +18,18 @@ Logging
 
 To better support debugging and operationalization here are some logging helpers to be used instead of
 
-  code example
-
+```
+code example
+```
 
 Conversions
 -----------
 
 Commonly required data type conversions when building Apps for SmartThings
 
-  code example
-
+```
+code example
+```
 
 Installation
 ------------
