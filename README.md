@@ -5,7 +5,7 @@ A re-useable library for SmartThings SmartApps. Born out of the need to share re
 
 You are encouraged to contribute your own re-useable functions and helpers.
 
-This library is licensed as [Apache V2](https://github.com/fxstein/smartthings-smartlib/blob/master/LICENSE "Apache V2 License") and hosted on github here: https://github.com/fxstein/smartthings-smartlib
+This library is licensed as [Apache V2](https://github.com/fxstein/smartthings-smartlib/blob/master/LICENSE "Apache V2 License") and hosted on github: https://github.com/fxstein/smartthings-smartlib
 
 
 SmartLib Library
@@ -57,4 +57,46 @@ Leverage the tool set of your choice or the selection listed above for all your 
 
 *Wishlist: RESTful API to allow a developer to upload and publish the source code for an App*
 
-**To be completed...**
+Useful Resources
+----------------
+
+These are some useful resources that will help you develop better SmartThings Apps and device drivers.
+
+### Icons
+
+Always looking for a suitable icon for your app. SmartThings provides a decent list of icons that can be used as a starting point. It easily allows you to replace the ugly default icon and select a more appropriate one.
+
+Thanks to Brian Steere (@Dianoga SmartThings Community) there is a useful icon explorer that allows you to browse some example icons as used by SmartThings:
+[SmartThings Shared Icons](http://scripts.3dgo.net/smartthings/icons/ "SmartThings Shared Icons on AWS")
+
+In order to use any of the icons for your SmartApp simple browse the collection and copy/paste the link into your app. The Icons displayed are the larger 2x sizes.
+
+Thermostat Example:
+
+![Thermostat](https://s3.amazonaws.com/smartthings-device-icons/Home/home1-icn@2x.png)
+
+```
+https://s3.amazonaws.com/smartthings-device-icons/Home/home1-icn@2x.png
+```
+
+In order to get the smaller size simply drop the `@2x` from the file name:
+
+```
+https://s3.amazonaws.com/smartthings-device-icons/Home/home1-icn.png
+```
+
+Small Thermostat Example:
+
+![Small Thermostat](https://s3.amazonaws.com/smartthings-device-icons/Home/home1-icn.png)
+
+There is currently no way to add your own custom icons into the SmartThings Universe other than hosting them yourself. Pretty much any persistent website/webfolder will do the trick. Just make sure that site is always available on the public internet.
+
+
+### Markdown Cheatsheet
+
+In order to write nicely written Markdown documents there is a great resource available here on github that gives lots of examples of how to structure a Markdown Document (Thanks to @adam-p):
+
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "adam-p's Markdown Cheatsheet")
+
+
+**To be continued...**
