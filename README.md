@@ -98,7 +98,7 @@ https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib@2
 https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib.png
 ```
 ![SmartLib](https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib@2x.png)
-![SmartLib Small](https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib.png)
+ ![SmartLib Small](https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib.png)
 
 
 ### Markdown Cheatsheet
