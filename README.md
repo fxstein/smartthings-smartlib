@@ -1,4 +1,4 @@
-SmartThings-SmartLib
+![Small Thermostat](https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib.png) SmartThings-SmartLib
 ====================
 
 A re-useable library for SmartThings SmartApps. Born out of the need to share re-useable code across various SmartApps. These are various best practices for how to operationalize and instrument your SmartApp.
@@ -91,7 +91,14 @@ Small Thermostat Example:
 
 ![Small Thermostat](https://s3.amazonaws.com/smartthings-device-icons/Home/home1-icn.png)
 
-There is currently no way to add your own custom icons into the SmartThings Universe other than hosting them yourself. Pretty much any persistent website/webfolder will do the trick. Just make sure that site is always available on the public internet.
+To host your own icons and images simply add them to your github repository and reference them through the raw image url like this:
+
+```
+https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib@2x.png
+https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib.png
+```
+![SmartLib](https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib@2x.png)
+![SmartLib Small](https://raw.githubusercontent.com/fxstein/smartthings-smartlib/master/smartlib.png)
 
 
 ### Markdown Cheatsheet
