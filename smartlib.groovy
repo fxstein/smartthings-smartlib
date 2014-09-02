@@ -32,13 +32,13 @@ preferences {
 }
 
 def installed() {
-	log.debug "Installed with settings: ${settings}"
+	slLog("info", "Installed with settings: ${settings}")
 
 	initialize()
 }
 
 def updated() {
-	log.debug "Updated with settings: ${settings}"
+	slLog("info", "Updated with settings: ${settings}")
 
 	unsubscribe()
 	initialize()
@@ -53,14 +53,14 @@ def initialize() {
 //
 
 // Unfortunately needed helpers to work with HubAction - Thanks to @pstuart
-public String convertIPtoHex(ipAddress) {
+public String slConvertIPtoHex(ipAddress) {
 	// Must do 2 digit hex padding or 10.x.x.x addresses will not work
 	String hexIp = ipAddress.tokenize( '.' ).collect {	String.format( '%02x', it.toInteger() ) }.join()
 	log.debug "IP address entered is $ipAddress and the converted hexIp code is $hexIp"
 	return hexIp
 }
 
-public String convertPortToHex(port) {
+public String slConvertPortToHex(port) {
 	// Must do 4 digit hex padding or 2 digit ports like 80 will not work
 	String hexPort = port.toString().format( '%04x', port.toInteger() )
 	log.debug "Port entered is $port and the converted hex code is $hexPort"
@@ -68,7 +68,7 @@ public String convertPortToHex(port) {
 }
 
 // Take IP:Port format and convert to correspondig HEX format for the ST Hub
-public String convertAddrToHex(deviceAddress) {
+public String slConvertAddrToHex(deviceAddress) {
 
 	def parts = deviceAddress.split(":")
 	def iphex = convertIPtoHex(parts[0])
@@ -78,4 +78,31 @@ public String convertAddrToHex(deviceAddress) {
 	def hexAddr = "$iphex:$porthex"
 	log.debug "Device address entered is $deviceAddress and the converted hexAddr code is $hexAddr"
 	return hexAddr
+}
+
+//
+// Advanced application level logging
+//
+
+public slLog(level, message) {
+  String tags = "$location|$state|$settings"
+
+  // TODO: Add external realtime logging capability
+
+  switch (level) {
+    case "info":
+      log.info "$tags: $message"
+      break
+    case "trace":
+      log.trace "$tags: $message"
+      break
+    case "warn":
+      log.warn "$tags: $message"
+      break
+    case "error":
+      log.warn "$tags: $message"
+      break
+    default:
+      log.debug "$tags: $message"
+  }
 }
