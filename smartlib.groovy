@@ -45,8 +45,15 @@ def updated() {
 }
 
 def initialize() {
-	// TODO: subscribe to attributes, devices, locations, etc.
+	subscribe(app, slEventHandler)
+	subscribe(location, slEventHandler)
 }
+
+// Default event handler to help debug event behavior
+def slEventHandler(event) {
+	slLog("debug", "event=$event&value=${event.value}&properties=" + event.getProperties())
+}
+
 
 //
 // IP Address conversion helpers
@@ -85,24 +92,33 @@ public String slConvertAddrToHex(deviceAddress) {
 //
 
 public slLog(level, message) {
-  String tags = "$location|$state|$settings"
+	def location = getLocation()
+	def timeNow = now();
+	String tags = "&level=$level&settings=$settings&time=$timeNow"
+	String logMessage = "$message$tags"
+
+	log.trace "app=$app&properties=" + app.getProperties()
+	log.trace "appparent=${app.parent}&properties=" + app.parent.getProperties()
+	log.trace "location=$location&properties=" + location.getProperties()
+	log.trace "state=$state&properties=" + state.getProperties()
+	log.trace "settings=$settings&properties=" + settings.getProperties()
 
   // TODO: Add external realtime logging capability
 
   switch (level) {
     case "info":
-      log.info "$tags: $message"
+      log.info logMessage
       break
     case "trace":
-      log.trace "$tags: $message"
+      log.trace logMessage
       break
     case "warn":
-      log.warn "$tags: $message"
+      log.warn logMessage
       break
     case "error":
-      log.warn "$tags: $message"
+      log.error logMessage
       break
     default:
-      log.debug "$tags: $message"
+      log.debug logMessage
   }
 }
